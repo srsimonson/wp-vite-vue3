@@ -7,9 +7,9 @@
  * @package vv3
  */
 
-if ( ! defined( '_S_VERSION' ) ) {
+if ( ! defined( 'vv3VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+	define( 'vv3VERSION', '1.0.0' );
 }
 
 /**
@@ -138,10 +138,10 @@ add_action( 'widgets_init', 'vv3_widgets_init' );
  * Enqueue scripts and styles.
  */
 function vv3_scripts() {
-	wp_enqueue_style( 'vv3-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'vv3-style', get_stylesheet_uri(), array(), vv3VERSION );
 	wp_style_add_data( 'vv3-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'vv3-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'vv3-navigation', get_template_directory_uri() . '/js/navigation.js', array(), vv3VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
